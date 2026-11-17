@@ -20,6 +20,7 @@ if (!JWT_KEY || JWT_KEY.length < 32) {
 }
 
 
+const MAX_FAILS_PER_MINUTE = 20;
 let fails = 0;
 let windowStart = Date.now();
 
