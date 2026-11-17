@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>prjC1 Page 2</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="app" hidden>
+    <nav>
+      <a href="admin.html">Admin</a>
+      <a href="page1.html">Page 1</a>
+      <a href="page2.html">Page 2</a>
+      <a href="#" id="logout">Logout</a>
+    </nav>
+    <main>
+      <h2>Page 2</h2>
+    </main>
+  </div>
+
+  <script src="config.js"></script>
+  <script src="app.js"></script>
+  <script>
+    setupLogout();
+    requireLogin();
+  </script>
+</body>
+</html>

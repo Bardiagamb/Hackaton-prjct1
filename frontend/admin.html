@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>prjC1 Admin</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="app" hidden>
+    <nav>
+      <a href="admin.html">Admin</a>
+      <a href="page1.html">Page 1</a>
+      <a href="page2.html">Page 2</a>
+      <a href="#" id="logout">Logout</a>
+    </nav>
+    <main>
+      <p>Welcome to Team prjC1, Secret: "<span id="secret"></span>", Time: <span id="time"></span></p>
+    </main>
+  </div>
+
+  <script src="config.js"></script>
+  <script src="app.js"></script>
+  <script>
+    setupLogout();
+
+    function showTime() {
+      document.getElementById('time').textContent = new Date().toLocaleString();
+    }
+    showTime();
+    setInterval(showTime, 1000);
+
+    requireLogin().then(data => {
+      if (data) document.getElementById('secret').textContent = data.secret;
+    });
+  </script>
+</body>
+</html>
